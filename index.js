@@ -27,6 +27,17 @@ $(document).keydown(function(){
     }
 })
 
+$(".start-button").click(function(){
+    if(!started){
+        $("#level-title").text("level "+level);
+        nextSequence();
+        started=true;
+        $(".start-button").hide();
+    }
+    else
+    $(".start-button").hide();
+})
+
 // alert(randomChosenColor);
 function nextSequence(){
 
@@ -85,4 +96,5 @@ function startover(){
     level=0;
     gamePattern=[];
     started=false;
+    $(".start-button").show();
 }
